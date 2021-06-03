@@ -1,0 +1,54 @@
+{
+  "name": "chat-app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "12.8.0",
+    "npm": "6.10.2"
+  },
+  "proxy": "http://localhost:4000",
+  "dependencies": {
+    "axios": "^0.18.1",
+    "body-parser": "^1.18.3",
+    "docker": "^1.0.0",
+    "docker-compose": "^0.17.2",
+    "express": "^4.16.4",
+    "http-proxy": "^1.17.0",
+    "mongo-pool": "^0.1.0",
+    "mongodb": "^3.2.3",
+    "pm2": "^4.1.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.5",
+    "redis": "^2.8.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.87.1",
+    "ws": "^6.2.1"
+  },
+  "scripts": {
+    "start": "pm2-runtime start process.config.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build-gateway": "docker build -f gateway.Dockerfile -t gateway . && docker tag gateway tmclennan/gateway && docker push tmclennan/gateway",
+    "build-websocket": "docker build -f websocket.Dockerfile -t websocket . && docker tag websocket tmclennan/websocket && docker push tmclennan/websocket",
+    "build-messanger": "docker build -f messanger.Dockerfile -t messanger . && docker tag messanger tmclennan/messanger && docker push tmclennan/messanger",
+    "build-frontend": "docker build -f frontend.Dockerfile -t react . && docker tag react tmclennan/react && docker push tmclennan/react",
+    "build-all-docker": "",
+    "deploy": "docker-compose -f devops/docker-compose.yml pull && docker stack deploy -c devops/docker-compose.yml message-app",
+    "stop": "docker stack remove message-app"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

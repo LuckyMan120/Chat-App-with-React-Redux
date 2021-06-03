@@ -1,0 +1,121 @@
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif
+
+}
+
+input[type=text], select, textarea {
+    width: 73%;
+    padding: 12px;
+    margin: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "sidebar main";
+    width: 100vw;
+    height: 100vh;
+}
+
+#main {
+    grid-area: main;
+    background-color: #e6ecf7; 
+}
+
+#new-message {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    margin-left: 0px;
+    border-top: 1px solid #3f3f3f; 
+    /* background-color: burlywood  */
+    background-color: #e6ecf7; 
+}
+#messages-list {
+    /* border-top: 1px solid #3f3f3f; */
+    font-size: 28;
+    padding: 5px 0 0 5px;
+    margin-top: 15px;
+    margin-left: 35px;
+    height: 100%;
+}
+
+#message-container {
+
+    background-color: 'white';
+    height: '85%';
+    width: '97%';
+    margin: 5;
+    padding: 15;
+    border: 1;
+}
+				  
+
+#sidebar {
+    grid-area: sidebar;
+    padding: 5px 0 0 5px;
+    margin-left: 5px;
+    border-right: 1px solid #3f3f3f;
+    /* border-top: 1px solid #3f3f3f; */
+    height: 100%;
+    background-color:white
+}
+
+
+/* .ChatPage {
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.message-area {
+  height: 200px;
+  padding: 20px;
+  background: #e8e8e8;
+  overflow-y: scroll;
+  width: 400px;
+} */
